@@ -59,6 +59,7 @@ samples/explosion_3 = {
 
 [node name="asteroid_1" type="Sprite"]
 
+transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 hframes = 5
 script/script = ExtResource( 2 )

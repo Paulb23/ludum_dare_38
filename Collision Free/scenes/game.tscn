@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=2]
@@ -6,6 +6,16 @@
 [ext_resource path="res://scenes/planet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://audio/music/loop_1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sprites/wave_back.png" type="Texture" id=7]
+[ext_resource path="res://next_wave_title.gd" type="Script" id=8]
+[ext_resource path="res://fonts/ka1.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 72
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 9 )
 
 [node name="game" type="Node2D"]
 
@@ -131,5 +141,49 @@ stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+
+[node name="between_round" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = false
+
+[node name="spawn_timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="wave_back" type="Sprite" parent="."]
+
+transform/pos = Vector2( -401.31, 102.028 )
+texture = ExtResource( 7 )
+script/script = ExtResource( 8 )
+
+[node name="wait" type="Timer" parent="wave_back"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Label" type="Label" parent="wave_back"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -182.0
+margin/top = -48.0
+margin/right = 146.0
+margin/bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Wave 1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

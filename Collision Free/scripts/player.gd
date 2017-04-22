@@ -5,7 +5,7 @@ var angle = 90;
 var planet_center_x = 400
 var planet_center_y = 300
 var radius = 100
-var speed = 2
+var speed = 3
 
 var dmg = 10
 var dmgScale = 1
