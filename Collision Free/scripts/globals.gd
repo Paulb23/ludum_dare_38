@@ -5,6 +5,7 @@ const screenHeight = 600
 
 var currentScene = null
 
+
 func _ready():
 	currentScene = get_tree().get_root().get_child(get_tree().get_root().get_child_count() -1)
 	set_screen_res(screenWidth, screenHeight)
@@ -22,4 +23,5 @@ func set_screen_res(width, height):
 
 func set_globals():
 	Globals.set("SCREEN_WIDTH", screenWidth)
-	Globals.set("SCREEN_HEIGHT", screenHeight)
+	Globals.set("SCREEN_HEIGHT", screenHeight)#
+	Globals.set("CURRENT_WAVE", 0)

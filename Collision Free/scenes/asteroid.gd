@@ -8,6 +8,17 @@ var spin_dir
 func _ready():
 	spin_dir = round(rand_range(0,1))
 	set_fixed_process(true)
+	get_node("Area2D").connect("body_enter", self, "collision")
+	get_node("Area2D").connect("area_enter", self, "area_collision")
+
+func area_collision(body):
+	collision(body)
+
+func collision(body):
+	if (body.get_parent().has_method("hit")):
+		get_parent().shake(5,5);
+		body.get_parent().hit(10)
+		hit(health)
 
 func _fixed_process(delta):
 	if dead and not get_node("AnimationPlayer").is_playing():

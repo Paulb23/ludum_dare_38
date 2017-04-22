@@ -133,9 +133,6 @@ randomness/linear_velocity = 0.5
 [node name="planet" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 400, 300 )
-mass = 1.21575e+09
-friction = 0.0
-sleeping = true
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 
