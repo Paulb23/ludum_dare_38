@@ -3,3 +3,42 @@
 |	     LUDUM DARE 38 - IDEAS TXT   	 |
 |						 |
 ===================================================
+
+Theme: A small world
+
+world implice singilar.
+
+ "It's a small world" - saying
+
+Large player so the world looks small.
+Rick and morty...
+Small to the player? univerce? and ant?
+
+What makes somthing small:
+	size relationshitp to you the player aka a giant
+	OR
+	size relationship to other objects aka the univerce
+
+Locations:
+	Space on a tiny planet
+	Germs...small world in a larger one.
+		- floating object - rain a single water droplet.
+	
+You cannot enter darkness so have to keep running around the planet to avoid the sunlight... there are night monsters that alter the land, -- endless runner type game.
+
+
+---------------------------------------------------------------------------------------------------------
+
+Collision Free
+
+Control a ship that cirlces the world and shoots attackers
+
+Story:
+	Shot of univerrce""The univerrce"
+	Shot of a earth: "Earth"
+	Short of a small world: "a small world" 
+                                                   "Oh carful of the asteroids"
+	Zoom to black and start the game.
+
+Gameplay:
+		
