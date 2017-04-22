@@ -7,7 +7,7 @@ func _ready():
 	get_node("exit").connect("pressed", self, "exit_pressed")
 
 func menu_pressed():
-	pass
+	globals.set_scene("res://scenes/main_menu.tscn");
 
 func retry_pressed():
 	globals.set_scene("res://scenes/game.tscn");

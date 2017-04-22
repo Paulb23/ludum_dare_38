@@ -5,14 +5,14 @@
 [ext_resource path="res://fonts/KarmaFuture.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://fonts/ka1.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=1]
 
 font/size = 48
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 font/size = 72
 font/use_mipmaps = false
@@ -54,7 +54,7 @@ content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=8]
 
 font/size = 62
 font/use_mipmaps = false
@@ -86,7 +86,7 @@ margin/left = 153.0
 margin/top = 148.0
 margin/right = 432.0
 margin/bottom = 210.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 1 )
 text = "You Lasted 16 Waves"
 percent_visible = 1.0
 lines_skipped = 0
@@ -102,7 +102,7 @@ margin/left = 130.0
 margin/top = 35.0
 margin/right = 654.0
 margin/bottom = 115.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Game Over"
 percent_visible = 1.0
 lines_skipped = 0
@@ -123,7 +123,7 @@ custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.792969, 0.768188, 0.768188, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 toggle_mode = false
@@ -147,7 +147,7 @@ custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.792969, 0.768188, 0.768188, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 toggle_mode = false
@@ -171,7 +171,7 @@ custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.792969, 0.768188, 0.768188, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 toggle_mode = false
