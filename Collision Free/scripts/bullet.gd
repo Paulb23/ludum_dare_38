@@ -16,11 +16,16 @@ func set_speed(speed):
 func set_taget(target_angle):
 	angle = target_angle
 
+func area_collision(body):
+	collision(body)
+
 func collision(body):
 	if (body.get_name() == "player" && parent == "player"):
 		return
-	if (body.get_name() != "player" && parent != "player"):
-		return
+	if (body.has_method("hit")):
+		get_parent().shake(5,5);
+		body.hit(dmg)
+		queue_free()
 
 
 func _fixed_process(delta):

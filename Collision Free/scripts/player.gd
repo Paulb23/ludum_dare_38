@@ -7,7 +7,7 @@ var planet_center_y = 300
 var radius = 100
 var speed = 2
 
-var dmg = 1
+var dmg = 10
 var dmgScale = 1
 var bullet = null
 var can_shoot = true
