@@ -57,7 +57,7 @@ font/font = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=8]
 
-font/size = 24
+font/size = 22
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 5 )
@@ -164,10 +164,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 302.0
-margin/top = 162.0
-margin/right = 873.0
-margin/bottom = 591.0
+margin/left = 304.0
+margin/top = 147.0
+margin/right = 875.0
+margin/bottom = 630.0
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.972656, 0.972656, 0.972656, 1 )
 text = "How To:
@@ -175,12 +175,14 @@ text = "How To:
 Defend the small world from attacks!
 Don't let it take damage.
 
+Use ESC or start to pause
+
 Use 
     AD, <-- -->, 
     Left and right DPAD or left stick 
 to move
 	
-Use 
+Use            
     Space, W. Up Arrow, 
     Up DPAD or X (A) 
 to shoot
