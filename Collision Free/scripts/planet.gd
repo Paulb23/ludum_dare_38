@@ -4,6 +4,7 @@ var health = 50
 
 func _fixed_process(delta):
 	if not get_node("AnimationPlayer").is_playing():
+		get_tree().set_pause(false)
 		globals.set_scene("res://scenes/game_over.tscn")
 
 func hit(dmg):
