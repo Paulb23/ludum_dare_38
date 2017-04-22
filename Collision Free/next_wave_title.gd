@@ -19,6 +19,7 @@ func _fixed_process(delta):
 		direction.y = direction.y * speed * delta
 		set_pos(get_pos() + direction)
 		if (get_pos().distance_to(Vector2(400, 100))) < 5:
+			get_parent().get_node("SamplePlayer").stop_all()
 			slide_on = false
 			get_node("wait").start()
 			set_fixed_process(false)

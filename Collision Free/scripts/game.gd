@@ -60,6 +60,7 @@ func _fixed_process(delta):
 		in_wave = false
 		get_node("wave_back").show(current_wave)
 		get_node("between_round").start()
+		get_node("SamplePlayer").play("wave_end")
 
 func enemy_killed():
 	enemies_killed += 1
