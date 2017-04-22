@@ -23,5 +23,6 @@ func set_screen_res(width, height):
 
 func set_globals():
 	Globals.set("SCREEN_WIDTH", screenWidth)
-	Globals.set("SCREEN_HEIGHT", screenHeight)#
+	Globals.set("SCREEN_HEIGHT", screenHeight)
 	Globals.set("CURRENT_WAVE", 0)
+	Globals.set("FIRST_TIME", 1)
