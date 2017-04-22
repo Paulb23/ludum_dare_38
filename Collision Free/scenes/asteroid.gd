@@ -3,8 +3,10 @@ extends Sprite
 export var health = 10
 var dead = false
 var speed = 25
+var spin_dir
 
 func _ready():
+	spin_dir = round(rand_range(0,1))
 	set_fixed_process(true)
 
 func _fixed_process(delta):
@@ -16,6 +18,10 @@ func _fixed_process(delta):
 		direction.x = direction.x * speed * delta
 		direction.y = direction.y * speed * delta
 		set_pos(get_pos() + direction)
+		if spin_dir:
+			set_rot(get_rot()+0.01)
+		else:
+			set_rot(get_rot()-0.01)
 
 func hit(dmg):
 	health -= dmg

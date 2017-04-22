@@ -4,7 +4,6 @@ var nodes = [
 	load("res://scenes/asteroid_1.tscn")
 ]
 
-var objects = 10
 var current_wave = 1
 var enemies_to_spawn = 0
 var enemies_spawned = 0
@@ -23,8 +22,8 @@ func start_next_wave():
 	if not in_wave:
 		current_wave = current_wave + 1
 		in_wave = true
-		enemies_to_spawn = (objects*current_wave)-objects/2
-		enemies_spawned = (objects*current_wave)-objects/2
+		enemies_to_spawn = 10 + (5 * current_wave)
+		enemies_spawned = 10 + (5 * current_wave)
 		enemies_killed = 0
 		spawn_enemy();
 
@@ -56,7 +55,6 @@ func spawn_enemy():
 
 func _fixed_process(delta):
 	if enemies_killed == enemies_spawned and in_wave:
-		print("next_wave!")
 		in_wave = false
 		get_node("wave_back").show(current_wave)
 		get_node("between_round").start()

@@ -11,7 +11,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 7.5
+radius = 8.5
 
 [sub_resource type="Animation" id=2]
 
@@ -69,7 +69,7 @@ health = 10
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.641027, 0.582748 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -79,6 +79,7 @@ script/script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
+transform/pos = Vector2( 0.641027, 0.582748 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
