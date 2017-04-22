@@ -5,7 +5,7 @@
 [ext_resource path="res://sprites/star.png" type="Texture" id=3]
 [ext_resource path="res://scenes/planet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/asteroid_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://audio/music/loop_1.ogg" type="AudioStream" id=6]
 
 [node name="game" type="Node2D"]
 
@@ -121,8 +121,15 @@ sleeping = true
 
 transform/pos = Vector2( 400, 166.205 )
 
-[node name="asteroid_1" parent="." instance=ExtResource( 6 )]
+[node name="loop_1" type="StreamPlayer" parent="."]
 
-transform/pos = Vector2( 423.269, 99.723 )
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 2.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

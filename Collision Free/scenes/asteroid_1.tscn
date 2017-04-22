@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://sprites/asteroid_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/asteroid.gd" type="Script" id=2]
 [ext_resource path="res://scripts/asteroid_area.gd" type="Script" id=3]
+[ext_resource path="res://audio/explosion_0.wav" type="Sample" id=4]
+[ext_resource path="res://audio/explosion_1.wav" type="Sample" id=5]
+[ext_resource path="res://audio/explosion_2.wav" type="Sample" id=6]
+[ext_resource path="res://audio/explosion_3.wav" type="Sample" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -24,6 +28,33 @@ tracks/0/keys = {
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 4 ]
+}
+
+[sub_resource type="SampleLibrary" id=3]
+
+samples/explosion_0 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/explosion_1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/explosion_2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/explosion_3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
 }
 
 [node name="asteroid_1" type="Sprite"]
@@ -61,5 +92,22 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 3 )
+default/volume_db = -5.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
 
 

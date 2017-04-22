@@ -16,3 +16,4 @@ func hit(dmg):
 		get_node("Area2D/CollisionShape2D").set_trigger(true)
 		dead = true
 		get_node("AnimationPlayer").play("explode");
+		get_node("SamplePlayer").play("explosion_" + str(round(rand_range(0, 3))))

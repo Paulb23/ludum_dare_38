@@ -50,6 +50,7 @@ func handle_shot():
 		fire(Vector2(get_pos().x, get_pos().y), angle, 200)
 		can_shoot = false
 		animation.play("shoot")
+		get_node("SamplePlayer").play("shoot_" + str(round(rand_range(0, 3))))
 		shoot_timer.start()
 	if not animation.is_playing():
 		animation.play("idle")
