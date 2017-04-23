@@ -1,7 +1,8 @@
 extends Node2D
 
 var nodes = [
-	load("res://scenes/asteroid_1.tscn")
+	load("res://scenes/asteroid_1.tscn"),
+	load("res://scenes/alien.tscn")
 ]
 
 var current_wave = 1
@@ -32,7 +33,11 @@ func start_next_wave():
 func spawn_enemy():
 	if in_wave:
 		enemies_to_spawn -= 1
-		var node = nodes[0].instance()
+		var node
+		if current_wave == 2:
+			node = nodes[0].instance()
+		else:
+			 node = nodes[round(rand_range(0, 1))].instance()
 		var side = round(rand_range(0,3))
 		if side == 0:
 			node.set_pos(Vector2(rand_range(-50, -100),rand_range(0, 600)))

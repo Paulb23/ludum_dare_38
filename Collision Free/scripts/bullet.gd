@@ -22,7 +22,7 @@ func area_collision(body):
 func collision(body):
 	if (body.get_name() == "player" && parent == "player"):
 		return
-	if (body.has_method("hit")):
+	if (body.has_method("hit") and not body.get_parent().dead):
 		get_parent().shake(5,5);
 		body.hit(dmg)
 		queue_free()
