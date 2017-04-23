@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://scripts/planet.gd" type="Script" id=1]
 [ext_resource path="res://sprites/planet.png" type="Texture" id=2]
 [ext_resource path="res://audio/world_explode.wav" type="Sample" id=3]
+[ext_resource path="res://scripts/health_bar.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -111,5 +112,11 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
+
+[node name="health" type="Node2D" parent="."]
+
+transform/pos = Vector2( 1.1282, 4.08839 )
+transform/scale = Vector2( 1.60758, 0.141016 )
+script/script = ExtResource( 4 )
 
 

@@ -31,7 +31,6 @@ func start_next_wave():
 
 func spawn_enemy():
 	if in_wave:
-		print("spawning: " + str(enemies_to_spawn))
 		enemies_to_spawn -= 1
 		var node = nodes[0].instance()
 		var side = round(rand_range(0,3))
@@ -64,17 +63,17 @@ func _fixed_process(delta):
 
 func enemy_killed():
 	enemies_killed += 1
-	self.set_pause_mode(PAUSE_MODE_PROCESS)
-	hit_timer.set_pause_mode(PAUSE_MODE_PROCESS)
-	get_tree().set_pause(true)
-	hit_timer.set_one_shot(true)
-	hit_timer.set_wait_time(0.07)
-	hit_timer.start()
-	yield(hit_timer, "timeout")
-	print("test")
-	get_tree().set_pause(false)
-	self.set_pause_mode(PAUSE_MODE_INHERIT)
-	hit_timer.set_pause_mode(PAUSE_MODE_INHERIT)
+	if (get_node("planet").health > 0):
+		self.set_pause_mode(PAUSE_MODE_PROCESS)
+		hit_timer.set_pause_mode(PAUSE_MODE_PROCESS)
+		get_tree().set_pause(true)
+		hit_timer.set_one_shot(true)
+		hit_timer.set_wait_time(0.07)
+		hit_timer.start()
+		yield(hit_timer, "timeout")
+		get_tree().set_pause(false)
+		self.set_pause_mode(PAUSE_MODE_INHERIT)
+		hit_timer.set_pause_mode(PAUSE_MODE_INHERIT)
 
 func shake(time, amount):
 	get_node("Camera2D").shake(time, amount)

@@ -10,6 +10,9 @@ func _ready():
 	set_fixed_process(true)
 	get_node("Area2D").connect("body_enter", self, "collision")
 	get_node("Area2D").connect("area_enter", self, "area_collision")
+	speed = rand_range(15,25)
+	var scale = round(rand_range(3,6))
+	set_scale(Vector2(scale,scale))
 
 func area_collision(body):
 	collision(body)
