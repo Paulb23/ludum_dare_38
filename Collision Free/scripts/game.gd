@@ -10,9 +10,11 @@ var enemies_spawned = 0
 var enemies_killed = 0
 var in_wave = false
 var spawn_timer
+var hit_timer
 
 func _ready():
 	spawn_timer = get_node("spawn_timer")
+	hit_timer = get_node("hit_timer")
 	set_fixed_process(true)
 	get_node("between_round").connect("timeout", self, "start_next_wave")
 	get_node("between_round").start()
@@ -62,6 +64,17 @@ func _fixed_process(delta):
 
 func enemy_killed():
 	enemies_killed += 1
+	self.set_pause_mode(PAUSE_MODE_PROCESS)
+	hit_timer.set_pause_mode(PAUSE_MODE_PROCESS)
+	get_tree().set_pause(true)
+	hit_timer.set_one_shot(true)
+	hit_timer.set_wait_time(0.07)
+	hit_timer.start()
+	yield(hit_timer, "timeout")
+	print("test")
+	get_tree().set_pause(false)
+	self.set_pause_mode(PAUSE_MODE_INHERIT)
+	hit_timer.set_pause_mode(PAUSE_MODE_INHERIT)
 
 func shake(time, amount):
 	get_node("Camera2D").shake(time, amount)

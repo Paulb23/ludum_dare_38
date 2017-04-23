@@ -8,7 +8,7 @@
 [ext_resource path="res://sprites/star.png" type="Texture" id=6]
 [ext_resource path="res://scenes/planet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://audio/music/loop_1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audio/music/loop_2.ogg" type="AudioStream" id=9]
 [ext_resource path="res://next_wave_title.gd" type="Script" id=10]
 [ext_resource path="res://audio/wave_end.wav" type="Sample" id=11]
 
@@ -409,6 +409,13 @@ one_shot = true
 autostart = false
 
 [node name="spawn_timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="hit_timer" type="Timer" parent="."]
 
 process_mode = 1
 wait_time = 1.0
