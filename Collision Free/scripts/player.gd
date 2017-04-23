@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var angle = 90;
+var angle = 86.45;
 
 var planet_center_x = 400
 var planet_center_y = 300
@@ -13,6 +13,9 @@ var bullet = null
 var can_shoot = true
 var shoot_timer
 var animation
+var start_pos
+
+var starting = false
 
 func _ready():
 	set_fixed_process(true)
@@ -24,13 +27,24 @@ func _ready():
 	shoot_timer.connect("timeout", self, "shoot_timer")
 	bullet = load("res://scenes/bullet.tscn")
 
-	angle -= 180
-	self.look_at(Vector2(planet_center_x, planet_center_y))
-	self.move_to(Vector2(planet_center_x+cos(angle)*radius, planet_center_y+sin(angle)*radius))
+	start_pos = get_pos()
+	set_pos(Vector2(start_pos.x, -50))
+	starting = true
 
 func _fixed_process(delta):
-	handle_movment(delta)
-	handle_shot()
+	if not starting:
+		handle_movment(delta)
+		handle_shot()
+
+	if starting:
+		var direction = start_pos - get_pos()
+		direction = direction.normalized( )
+		direction.x = direction.x * 100 * delta
+		direction.y = direction.y * 100 * delta
+		set_pos(get_pos() + direction)
+
+		if start_pos.distance_to(get_pos()) < 1:
+			starting = false;
 
 func _input(event):
 	pass
